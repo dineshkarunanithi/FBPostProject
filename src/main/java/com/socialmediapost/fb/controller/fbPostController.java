@@ -74,7 +74,7 @@ public class fbPostController {
 		String uri = "https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token"
 		  		+ "&client_id=391782198535970&client_secret=2e59ad3d37d98dbca63ace26f6c70852"
 		  		+ "&fb_exchange_token="
-		  		+ "EAAFkUubF5yIBAHWSV8Tr2wRUwtHbKMDciyNe8NYHo4FZC8RSFoSzWZCp4VZCjLawNBZAZASkn1ZCHbDJGa3GE2HBTljuHJfBmuj4RXiuaVEKc4spRSiiPKDba9ajsbvKxMR00aYZAaLhopEeSFOnkZBZAGThKZAOqgcTN4f0BL6Ls0jfAU6MXBSNL5elxFI8wFDtYPnNG8frAvzQZDZD";
+		  		+ "EAAFkUubF5yIBAJ0otWK51fYGyMcn984IsJxCimrJqlGCZAQ9m4n07S69ZCr41r9ZAqqvwzHnlePpF8CQ7dBBsoP9nP5RSNopZAl4xNyprKgX7C7X0xpTNwXHpRyCMO16ckjiqiYXNCkHiovnuYc2o27xBicpCHnFi5ZBmNst9hYhBkoypBGZAvSo69UCn2pDAwjJBk4CZB5EwZDZD";
 		  
 		  longLivedToken longLivedToken = restTemplate.getForObject(uri,longLivedToken.class);
 		return longLivedToken;
