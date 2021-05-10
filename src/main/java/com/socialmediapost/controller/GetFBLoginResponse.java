@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.socialmediapost.Entities.PostSocialMediaRequest;
+import com.socialmediapost.requestDto.FBLoginCallbackDTO;
 
 
 
@@ -18,12 +19,12 @@ public class GetFBLoginResponse {
 
 	
 	  @PostMapping(path = "/socialMedia/postUserAccess") 
-	  public String postSocialMedia(@RequestBody PostSocialMediaRequest postSocialMediaRequest )
+	  public String postSocialMedia(@RequestBody FBLoginCallbackDTO fBLoginCallbackDTO )
 	  {
 	  
-	  System.out.println(postSocialMediaRequest.toString());
+	  System.out.println(fBLoginCallbackDTO.toString());
 	  
-	  return postSocialMediaRequest.toString(); }
+	  return fBLoginCallbackDTO.toString(); }
 	
 	
 }
