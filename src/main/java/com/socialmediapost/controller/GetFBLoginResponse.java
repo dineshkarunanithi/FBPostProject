@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.socialmediapost.Entities.PostSocialMediaRequest;
-import com.socialmediapost.fb.dto.PostMessageResponse;
+
+
 
 @RestController
 public class GetFBLoginResponse {

@@ -30,8 +30,9 @@ public class fbPostController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@Autowired
-	private AccessTokenRepository accessTokenRepo;
+	/*
+	 * @Autowired private AccessTokenRepository accessTokenRepo;
+	 */
 	
 	  
 	  @GetMapping(path = "/fb/postMessage") 
@@ -94,11 +95,13 @@ public class fbPostController {
 				+ "&access_token="+pageTokenResponse.getAccess_token();
 		  System.out.println(uri);
 		  
-		  AccessTokenEntity accessToken = new AccessTokenEntity();
-		  
-		  accessToken.setApp_Name("test_app_Development_mode");
-		  accessToken.setAccess_Token(pageTokenResponse.getAccess_token());
-		  accessToken.setToken_Type("Page Access Token");
+			/*
+			 * AccessTokenEntity accessToken = new AccessTokenEntity();
+			 * 
+			 * accessToken.setApp_Name("test_app_Development_mode");
+			 * accessToken.setAccess_Token(pageTokenResponse.getAccess_token());
+			 * accessToken.setToken_Type("Page Access Token");
+			 */
 		  
 			/* accessTokenRepo.save(accessToken); */
 		  

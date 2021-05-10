@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.socialmediapost.Entities.PostSocialMediaRequest;
+import com.socialmediapost.Entities.PostSocialMediaRequestEntity;
 import com.socialmediapost.Entities.PostSocialMediaRequestRepository;
 import com.socialmediapost.db.AccessTokenEntity;
 import com.socialmediapost.db.AccessTokenRepository;
