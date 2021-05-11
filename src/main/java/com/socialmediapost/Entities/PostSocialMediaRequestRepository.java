@@ -1,7 +1,7 @@
 package com.socialmediapost.Entities;
 
-//import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface PostSocialMediaRequestRepository /* extends CrudRepository<PostSocialMediaRequestEntity, Integer> */{
+public interface PostSocialMediaRequestRepository  extends CrudRepository<PostSocialMediaRequestEntity, Integer> {
 
 }

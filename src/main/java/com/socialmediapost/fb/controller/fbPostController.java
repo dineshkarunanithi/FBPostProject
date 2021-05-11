@@ -72,16 +72,16 @@ public class fbPostController {
 
 	private longLivedToken longLivedToken() {
 		String uri = "https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token"
-		  		+ "&client_id=391782198535970&client_secret=2e59ad3d37d98dbca63ace26f6c70852"
+		  		+ "&client_id=1614553392073694&client_secret=a119a3d57c68f75f0fd0c039f6fd28de"
 		  		+ "&fb_exchange_token="
-		  		+ "EAAFkUubF5yIBAJ0otWK51fYGyMcn984IsJxCimrJqlGCZAQ9m4n07S69ZCr41r9ZAqqvwzHnlePpF8CQ7dBBsoP9nP5RSNopZAl4xNyprKgX7C7X0xpTNwXHpRyCMO16ckjiqiYXNCkHiovnuYc2o27xBicpCHnFi5ZBmNst9hYhBkoypBGZAvSo69UCn2pDAwjJBk4CZB5EwZDZD";
+		  		+ "EAAW8bYFny94BALUUC7QjyFzpGWxyZBU22dNDZCwZAYa4IepZCilC40dZB5y108dLcIrOGfemhkrYvaxty3op3IrqEJXPTXAwGhCbnopnP76cZCn3cNlZC0DNPRZBlR65FgGaHnwe5vdZCdimOSOQTzfDcyE5ZAMF8rFyxFJNTRm7UAuLDs9XdK9ZBO3TvXAFMX456iJmXVwu9h2lgZDZD";
 		  
 		  longLivedToken longLivedToken = restTemplate.getForObject(uri,longLivedToken.class);
 		return longLivedToken;
 	}
 
 	private pageTokenResponse pageAccessToken(longLivedToken livedToken) {
-		String uri = "https://graph.facebook.com/110549761173781?"
+		String uri = "https://graph.facebook.com/107954321462447?"
 				+ "fields=access_token"
 				+ "&access_token="+livedToken.getAccess_token();
 		  
@@ -90,7 +90,7 @@ public class fbPostController {
 	}
 	
 	private PostMessageResponse postMessage(pageTokenResponse pageTokenResponse,String message) {
-		String uri = "https://graph.facebook.com/110549761173781/feed"
+		String uri = "https://graph.facebook.com/107954321462447/feed"
 				+ "?message="+message
 				+ "&access_token="+pageTokenResponse.getAccess_token();
 		  System.out.println(uri);

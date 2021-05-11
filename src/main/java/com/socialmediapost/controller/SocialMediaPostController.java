@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.socialmediapost.Entities.PostSocialMediaRequest;
 import com.socialmediapost.Entities.PostSocialMediaRequestEntity;
 import com.socialmediapost.Entities.PostSocialMediaRequestRepository;
 import com.socialmediapost.db.AccessTokenEntity;
@@ -31,27 +32,29 @@ import com.socialmediapost.fb.dto.longLivedToken;
 import com.socialmediapost.fb.dto.pageTokenResponse;
 
 @RestController
-/* @CrossOrigin("http://localhost:8080") */
 public class SocialMediaPostController {
+	
+	  
+	  @Autowired 
+	  private RestTemplate restTemplate;
+	  
+	  @Autowired 
+	  private PostSocialMediaRequestRepository socialMediaPostRepo;
+	  
+	  @CrossOrigin
+	  @PostMapping(path = "/socialMedia/postUserDetails") public PostMessageResponse
+	  postSocialMedia(@RequestBody PostSocialMediaRequestEntity postSocialMediaRequest )
+		  {
+		  
+			  System.out.println(postSocialMediaRequest.toString());
+			  
+			  socialMediaPostRepo.save(postSocialMediaRequest);
+			  
+			  return null; 
+		 }
+	  
+	  
 	/*
-	 * 
-	 * @Autowired private RestTemplate restTemplate;
-	 * 
-	 * @Autowired private PostSocialMediaRequestRepository socialMediaPostRepo;
-	 * 
-	 * @CrossOrigin
-	 * 
-	 * @PostMapping(path = "/socialMedia/postUserAccess") public PostMessageResponse
-	 * postSocialMedia(@RequestBody PostSocialMediaRequest postSocialMediaRequest )
-	 * {
-	 * 
-	 * System.out.println(postSocialMediaRequest.toString());
-	 * 
-	 * socialMediaPostRepo.save(postSocialMediaRequest);
-	 * 
-	 * return null; }
-	 * 
-	 * 
 	 * @Option(path = "/socialMedia/postUserAccess") public PostMessageResponse
 	 * postSocialMedia(@RequestBody PostSocialMediaRequest postSocialMediaRequest )
 	 * {
@@ -61,9 +64,9 @@ public class SocialMediaPostController {
 	 * socialMediaPostRepo.save(postSocialMediaRequest);
 	 * 
 	 * return null; }
-	 * 
-	 * 
-	 * @ModelAttribute public void setResponseHeader(HttpServletResponse response) {
-	 * response.setHeader("Access-Control-Allow-Origin", "*"); }
-	 * 
-	 */ }
+	 */
+	  
+	  @ModelAttribute public void setResponseHeader(HttpServletResponse response) {
+	  response.setHeader("Access-Control-Allow-Origin", "*"); }
+	  
+	  }
