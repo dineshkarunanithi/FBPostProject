@@ -20,5 +20,5 @@ public class PostMessageResponse {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 }

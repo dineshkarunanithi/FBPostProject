@@ -27,33 +27,33 @@ import com.socialmediapost.db.AccessTokenEntity;
 import com.socialmediapost.db.AccessTokenRepository;
 import com.socialmediapost.fb.controller.fbPostController;
 import com.socialmediapost.fb.dto.PostHomeListingCommerceManagerRequest;
-import com.socialmediapost.fb.dto.PostMessageResponse;
+import com.socialmediapost.fb.dto.FBLoginResponse;
 import com.socialmediapost.fb.dto.longLivedToken;
 import com.socialmediapost.fb.dto.pageTokenResponse;
 
 @RestController
 public class SocialMediaPostController {
-	
-	  
-	  @Autowired 
-	  private RestTemplate restTemplate;
-	  
-	  @Autowired 
-	  private PostSocialMediaRequestRepository socialMediaPostRepo;
-	  
-	  @CrossOrigin
-	  @PostMapping(path = "/socialMedia/postUserDetails") public PostMessageResponse
-	  postSocialMedia(@RequestBody PostSocialMediaRequestEntity postSocialMediaRequest )
-		  {
-		  
-			  System.out.println(postSocialMediaRequest.toString());
-			  
-			  socialMediaPostRepo.save(postSocialMediaRequest);
-			  
-			  return null; 
-		 }
-	  
-	  
+
+
+	@Autowired 
+	private RestTemplate restTemplate;
+
+	@Autowired 
+	private PostSocialMediaRequestRepository socialMediaPostRepo;
+
+	@CrossOrigin
+	@PostMapping(path = "/socialMedia/postUserDetails") public FBLoginResponse
+	postSocialMedia(@RequestBody PostSocialMediaRequestEntity postSocialMediaRequest )
+	{
+		System.out.println(postSocialMediaRequest.toString());
+		socialMediaPostRepo.save(postSocialMediaRequest);
+		FBLoginResponse messageResponse = new FBLoginResponse();
+		messageResponse.setUserId(postSocialMediaRequest.getUserId());
+
+		return messageResponse;
+	}
+
+
 	/*
 	 * @Option(path = "/socialMedia/postUserAccess") public PostMessageResponse
 	 * postSocialMedia(@RequestBody PostSocialMediaRequest postSocialMediaRequest )
@@ -65,8 +65,8 @@ public class SocialMediaPostController {
 	 * 
 	 * return null; }
 	 */
-	  
-	  @ModelAttribute public void setResponseHeader(HttpServletResponse response) {
-	  response.setHeader("Access-Control-Allow-Origin", "*"); }
-	  
-	  }
+
+	@ModelAttribute public void setResponseHeader(HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Origin", "*"); }
+
+}

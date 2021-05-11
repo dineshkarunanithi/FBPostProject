@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.socialmediapost.fb.dto.PostHomeListingCommerceManagerRequest;
-import com.socialmediapost.fb.dto.PostMessageResponse;
+import com.socialmediapost.fb.dto.FBLoginResponse;
 import com.socialmediapost.fb.dto.longLivedToken;
 import com.socialmediapost.fb.dto.pageTokenResponse;
 import com.socialmediapost.insta.dto.InstaContainerImagePostRequest;
